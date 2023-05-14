@@ -45,6 +45,6 @@ def main():
     performOperation(setA, setB, operation)
         
 
-  sys.stdout.write(str(sum(setA))) 
+  print(sum(setA))
     
 main()
