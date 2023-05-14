@@ -9,33 +9,16 @@
 # if a player can't move, they lose the game
 
 
+# FUNCTION RETURNS WINNING PLAYER (INT)
+
+
 
 def towerBreakers(numTowers, height):
-    p1move = True 
-    gameOver = False
-    winner = None
+    
+    if height == 1:
+        return 2
+    
+    return int(numTowers % 2 == 0) + 1
+    
 
-
-    towers = [height] * numTowers
-
-    while gameOver is not True:
-        currentMoves = [possibleMoves(t) for t in towers]
-        print(currentMoves)
-        # for i in range(len(numTowers)):
-        gameOver = True
-            
-            
-            
-        
-
-
-def possibleMoves(height):
-    moves = []
-    for i in range(1, height):
-        if height % (height - i) == 0:
-            moves.append(i)        
-    return moves
-
-
-towerBreakers(2, 6)
     
