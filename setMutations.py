@@ -35,30 +35,15 @@ def performOperation(setA, setB, op):
 
 def main():
 
-  # create an array of inputs
-  count = 0
-  setA = set()
-  setB = set()
-  numofOtherSets = 0
-  while count < 3:
-    for line in sys.stdin:
-      if count == 1:
-        setA = set([int(num) for num in line.split()])
-      elif count == 2:
-        numofOtherSets = int(line.strip())
-      count += 1 
-      break
+  input()
+  setA = set([int(num) for num in input().split()])
+  numofOtherSets = int(input().strip())
 
-  count = 0
-  while count < numofOtherSets:
-    for op in sys.stdin:
-      operation = op.split()[0]
-      for nextSet in sys.stdin:
-        setB = set([int(num) for num in nextSet.split()])
-        performOperation(setA, setB, operation)
-        break
-      count += 1
-      break
+  for index in range(numofOtherSets):
+    operation = input().split()[0]
+    setB = set([int(num) for num in input().split()])
+    performOperation(setA, setB, operation)
+        
 
   sys.stdout.write(str(sum(setA))) 
     
