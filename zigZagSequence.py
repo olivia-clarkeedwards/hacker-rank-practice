@@ -1,3 +1,11 @@
+# Sample input 
+
+# 2 - number of test cases 
+# 7 - length of test array 
+# 1 2 3 5 4 7 6 - test array 
+# 9 - length of test array
+# 5 4 3 6 1 2 8 7 9 - test array
+
 def findZigZagSequence(a, n):
     a.sort()
     mid = int((n)//2)
