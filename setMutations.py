@@ -4,9 +4,6 @@ Solution by Olivia Clarke-Edwards
 Problem: https://www.hackerrank.com/challenges/py-set-mutations/problem
 '''
 
-
-
-
 # Sample input:
 
 # 16 - number of elements in set A 
