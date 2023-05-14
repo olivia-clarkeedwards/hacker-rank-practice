@@ -1,3 +1,4 @@
+# Sample inputs 
 
 # 16 - number of elements in set A 
 # 1 2 3 4 5 6 7 8 9 10 11 12 13 14 24 52 - elements in set A 
@@ -11,7 +12,20 @@
 # difference_update 7 - operation, number of operations in next set 
 # 11 22 35 55 58 62 66
 
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
 import sys 
+
+def performOperation(setA, setB, op):
+  if op == 'update':
+    setA.update(setB)
+  elif op == 'intersection_update':
+    setA.intersection_update(setB)
+  elif op == 'symmetric_difference_update':
+    setA.symmetric_difference_update(setB)
+  elif op == 'difference_update':
+    setA.difference_update(setB)
+    
 
 def main():
 
@@ -40,22 +54,6 @@ def main():
       count += 1
       break
 
-  return sum(setA)
-
-
-def performOperation(setA, setB, op):
-  print(setA, setB)
-  if op == 'update':
-    setA.update(setB)
-  elif op == 'intersection_update':
-    setA.intersection_update(setB)
-  elif op == 'symmetric_difference_update':
-    setA.symmetric_difference_update(setB)
-  elif op == 'difference_update':
-    setA.difference_update(setB)
-
-
-
+  sys.stdout.write(str(sum(setA))) 
     
-
 main()
