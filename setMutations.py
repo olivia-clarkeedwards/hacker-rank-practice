@@ -1,4 +1,13 @@
-# Sample inputs 
+'''
+Description: Given a set A, apply updates and sets specified. Return resulting sum of set A. 
+Solution by Olivia Clarke-Edwards 
+Problem: https://www.hackerrank.com/challenges/py-set-mutations/problem
+'''
+
+
+
+
+# Sample input:
 
 # 16 - number of elements in set A 
 # 1 2 3 4 5 6 7 8 9 10 11 12 13 14 24 52 - elements in set A 
