@@ -1,5 +1,6 @@
 # get super digit of the string n concatenated k times 
 # super digit is the sum of digits until the result is length 1
+# https://en.wikipedia.org/wiki/Digital_root
 
 def getSuper(n):
     sum = n % 9
