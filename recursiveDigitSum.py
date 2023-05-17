@@ -2,7 +2,7 @@
 # super digit is the sum of digits until the result is length 1
 # https://en.wikipedia.org/wiki/Digital_root
 
-def getSuper(n):
+def getSuper(n, memo = {}):
     sum = n % 9
     if sum == 0:
         return 9
