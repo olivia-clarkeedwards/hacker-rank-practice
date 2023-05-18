@@ -1,9 +1,6 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-
 class Queue():
     def __init__(self):
-        self.one = []
-        self.two = []
+        self.stack = []
         
     def enqueue(self, data):
         if not self.isEmpty(self.two):
