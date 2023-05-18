@@ -20,10 +20,9 @@
 #     return 
 
 
-def getNumberOfSwaps(line):
+def getNumberOfSwaps(line, swaps = 0):
     #implement bubble sort 
-    # record number of swaps 
-    swaps = 0
+    # record number of swaps
 
     for i in range(len(line)):
       value = line[i]
@@ -32,7 +31,10 @@ def getNumberOfSwaps(line):
           print("Too chaotic")
           return
       
-    for i in range(len(line)):
+    for i in range(len(line) - 1):
+        if line[j] > line[j + 1]:
+                line[j], line[j + 1] = line[j + 1], line[j]
+                swaps += 1
         
         for j in range(len(line) - 1 - i):
             if line[j] > line[j + 1]:
