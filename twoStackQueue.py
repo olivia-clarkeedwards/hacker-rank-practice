@@ -3,10 +3,7 @@ class Queue():
         self.stack = []
         
     def enqueue(self, data):
-        if not self.isEmpty(self.two):
-            for _ in range(len(self.two)):
-                self.one.append(self.two.pop())
-        self.one.append(data)
+        self.stack.append(data)
                  
     def dequeue(self):
         if self.size() != 0:
