@@ -21,9 +21,12 @@
 
 
 
-def getNumberOfSwaps(line, swaps = 0):
+def getNumberOfSwaps(line, swaps = 0, memo = {}):
     n = len(line)
+    key = ','.join([str(num) for num in line])
     sorted = True
+    if key in memo:
+        return memo[key]
     
     for i in range(n - 1):
         if line[i] > line[i + 1]:
@@ -34,8 +37,8 @@ def getNumberOfSwaps(line, swaps = 0):
     if sorted:
         return swaps
     else:
-        swaps = getNumberOfSwaps(line[:n], swaps)
-        return swaps
+        memo[key] = getNumberOfSwaps(line[:n], swaps, memo)
+        return memo[key]
             
 
 
