@@ -6,13 +6,12 @@ class Queue():
         self.stack.append(data)
                  
     def dequeue(self):
-        if self.size() != 0:
-          if not self.isEmpty(self.one):
-              for _ in range(len(self.one)):
-                  self.two.append(self.one.pop())
-          self.two.pop()
-        else:
-             print("Cannot dequeue, queue is empty.")
+        # if the queue is empty, return 
+        # pop off top item and store 
+        # if queue is empty, return popped item 
+        # add top item back on the stack 
+        # return the item returned by the recursive call 
+
             
         
     def printFrontItem(self):
@@ -28,7 +27,7 @@ class Queue():
         return stack == []
     
     def size(self):
-        return len(self.one + self.two)
+        return len(self.stack)
 
         
         
