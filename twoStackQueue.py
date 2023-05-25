@@ -1,61 +1,36 @@
 class Queue():
     def __init__(self):
-        self.stack = []
+        self.input = []
+        self.output = []
         
     def enqueue(self, data):
-        self.stack.append(data)
-                 
+        if len(self.output) == 0:
+            self.input.append(data)
+        else:
+            while len(self.output) > 0:
+                self.input.append(self.output.pop())
+            self.input.append(data)
+
     def dequeue(self):
-        # if the queue is empty, return 
-        if self.size() <= 0:
-            return 
         
-        top_item = self.stack.pop()
+        if len(self.input) != 0:
+            while len(self.input) != 0:
+              self.output.append(self.input.pop()) 
 
-        if self.size() == 0:
-            return top_item
-        
-        front_item = self.dequeue()
-
-        self.stack.append(top_item)
-
-        return front_item
-
-            
-        # pop off top item and store 
-        # if queue is empty, return popped item 
-        # add top item back on the stack 
-        # return the item returned by the recursive call 
-
-            
+        if len(self.output) != 0:
+          self.output.pop()
         
     def printFrontItem(self):
-
-        # if the queue is empty, return 
-        if self.size() <= 0:
-            return
         
-        top_item = self.stack.pop()
+        if len(self.input) == 0 and len(self.output) == 0:
+            print('Queue is empty.')
+        else:
+            if len(self.input) != 0:
+                print(self.input[0])
+            else:
+                print(self.output[-1])
 
-        if self.size() == 0:
-            print(top_item) 
-        
-        self.printFrontItem()
-        self.stack.append(top_item)
     
-        
-
-    def isEmpty(self, stack):
-        return stack == []
-    
-    def size(self):
-        return len(self.stack)
-    
-    def toString(self):
-        return self.stack
-
-        
-        
 
 queryCount = int(input())
 twoStackQ = Queue()
