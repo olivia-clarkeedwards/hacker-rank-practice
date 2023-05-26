@@ -1,6 +1,8 @@
+#implemented with one stack eventually because wouldn't pass hackerrank with two queues without timing out. 
+
 class Queue():
     def __init__(self):
-        stack = []
+        self.stack = []
 
     def enqueue(self, data):
         self.stack.append(data)
@@ -13,9 +15,6 @@ class Queue():
           print(self.stack[0])
         else:
             print('Queue empty.')
-        
-        
-    
 
 def processQueries():
 
