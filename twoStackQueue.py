@@ -1,49 +1,38 @@
 class Queue():
     def __init__(self):
-        self.input = []
-        self.output = []
-        
+        stack = []
+
     def enqueue(self, data):
-        if len(self.output) == 0:
-            self.input.append(data)
-        else:
-            while len(self.output) > 0:
-                self.input.append(self.output.pop())
-            self.input.append(data)
-
+        self.stack.append(data)
+    
     def dequeue(self):
-        
-        if len(self.input) != 0:
-            while len(self.input) != 0:
-              self.output.append(self.input.pop()) 
+        self.stack.pop(0)
 
-        if len(self.output) != 0:
-          self.output.pop()
-        
     def printFrontItem(self):
-        
-        if len(self.input) == 0 and len(self.output) == 0:
-            print('Queue is empty.')
+        if len(self.stack) != 0:
+          print(self.stack[0])
         else:
-            if len(self.input) != 0:
-                print(self.input[0])
-            else:
-                print(self.output[-1])
-
+            print('Queue empty.')
+        
+        
     
 
-queryCount = int(input())
-twoStackQ = Queue()
-for _ in range(queryCount):
-    
-    q = input().split()
+def processQueries():
 
-    if q[0] == '1':
-        twoStackQ.enqueue(int(q[1]))
-    elif q[0] == '2':
-        twoStackQ.dequeue()
-    else:
-        twoStackQ.printFrontItem()
+  queryCount = int(input())
+  twoStackQ = Queue()
+  for _ in range(queryCount):
+      
+      q = input().split()
+
+      if q[0] == '1':
+          twoStackQ.enqueue(int(q[1]))
+      elif q[0] == '2':
+          twoStackQ.dequeue()
+      else:
+          twoStackQ.printFrontItem()
+
+processQueries()
         
 
 
