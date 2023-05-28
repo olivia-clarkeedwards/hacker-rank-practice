@@ -56,8 +56,3 @@ for i in range(t):
     tree.create(arr[i])
 
 preOrder(tree.root)  
-    
-
-
-
-
