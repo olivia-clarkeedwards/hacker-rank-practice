@@ -1,16 +1,18 @@
+import heapq
+
 def sweeten(min_sweetness, cookies, count = 0):
-     
-    if min(cookies) >= min_sweetness:
-        return count
-    if len(cookies) < 2:
-        return -1
-    cookies.sort()
-    if cookies[0] >= min_sweetness:
-        return count + 1
-    else:
-        cookies.append(cookies[0] + (2 * cookies[1]))
+    heapq.heapify(cookies)
+
+    while cookies[0] < min_sweetness:
+        if len(cookies) == 1:
+            return -1
+        least_sweet = heapq.heappop(cookies)
+        second_least_sweet = heapq.heappop(cookies)
+        heapq.heappush(cookies, least_sweet + (2 * second_least_sweet))
         count += 1
-        return sweeten(min_sweetness, cookies[2:], count)
+          
+    return count 
+
 
 print(sweeten(9, [2, 7, 3, 6, 4, 6]))
     
