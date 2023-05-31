@@ -13,26 +13,22 @@ import sys
 #
 
 def noPrefix(words):
-    words_by_alpha = {}
-    
-    for word in words:
-        target_letter = word[0]
+    seen_prefixes, seen_words = set(), set()
 
-        if target_letter in words_by_alpha:
-            
-            for target in words_by_alpha[target_letter]:
-                if target[:len(word)] == word or word[:len(target)] == target:
-                    print('BAD SET')
-                    print(word)
-                    return
-            words_by_alpha[target_letter].append(word)
+    for word in words:
+        if word in seen_words:
+            print(f"BAD SET\n{word}")
+            return
         else:
-            words_by_alpha[target_letter] = [word]
-            
-    print('GOOD SET')
-    return
-        
-    
+            seen_words.add(word)
+        for index in range(1, len(word)):
+            prefix = word[:index]
+            if prefix in seen_prefixes:
+                print(f"BAD SET\n{word}")
+                return 
+            else:
+                seen_prefixes.add(prefix)
+    print(f"GOOD SET") 
 
 def main():
     n = int(input().strip())
