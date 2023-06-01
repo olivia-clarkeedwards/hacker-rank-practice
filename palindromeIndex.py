@@ -12,7 +12,7 @@ def palindromeIndex(word):
 
 def isPalindrome(word):
     if len(word) == 1:
-        return 
+        return True
     if len(word) % 2 == 0:
         midIndex = len(word) // 2
         firstHalf = word[:midIndex]
@@ -45,4 +45,5 @@ print(palindromeIndex('bcbc')) # 0
 print(palindromeIndex('aaab')) # 3
 print(palindromeIndex('baa')) # 0
 print(palindromeIndex('aaa')) # -1
+print(palindromeIndex('a'))
 
